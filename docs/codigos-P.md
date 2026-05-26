@@ -62,7 +62,7 @@ P 0 4 2 0
 | 3 | Sistema de encendido / fallos de encendido (misfire) |
 | 4 | Control auxiliar de emisiones (EVAP, EGR, catalizador) |
 | 5 | Control de velocidad y ralentí |
-| 6 | Sistemas de salida del computador (PCM, comunicación interna) |
+| 6 | Sistemas de salida del computador (ECM, comunicación interna) |
 | 7, 8, 9 | Transmisión |
 
 ## 4. Convenciones de bancos y sensores
@@ -76,7 +76,7 @@ Los DTC referidos a sensores múltiples utilizan la siguiente nomenclatura:
 - **Sensor 2 (Sensor 2):** sensor de oxígeno **después** del catalizador
   (downstream / aguas abajo).
 
-> 📋 **NOTA TÉCNICA:** En motores en línea (L4, L5, L6) solo existe
+> ▪ **NOTA TÉCNICA:** En motores en línea (L4, L5, L6) solo existe
 > Banco 1. Cualquier DTC referido a Banco 2 en estos motores indica
 > error de configuración del escáner o codificación incorrecta de la
 > ECU.
@@ -127,18 +127,18 @@ Los DTC referidos a sensores múltiples utilizan la siguiente nomenclatura:
 | 40 | **P0446** | Circuito de control del venteo EVAP | Válvula de venteo (vent valve) atascada, arnés roto | Probar accionamiento bidireccional; reemplazar válvula |
 | 41 | **P0455** | Fuga grande detectada en sistema EVAP | Tapón ausente o muy dañado, manguera desconectada | Inspección visual; instalar tapón correcto |
 | 42 | **P0456** | Fuga muy pequeña detectada en sistema EVAP | Sello del tapón, microfisuras en mangueras | Prueba de humo a baja presión (<1 psi) |
-| 43 | **P0500** | Mal funcionamiento del sensor de velocidad del vehículo (VSS) | Sensor VSS dañado, ABS reportando datos inválidos al PCM | Verificar señal VSS y comunicación con módulo ABS |
+| 43 | **P0500** | Mal funcionamiento del sensor de velocidad del vehículo (VSS) | Sensor VSS dañado, ABS reportando datos inválidos a la ECM | Verificar señal VSS y comunicación con módulo ABS |
 | 44 | **P0506** | Sistema de control de ralentí — RPM más bajas de lo esperado | Cuerpo de aceleración sucio, fuga de aire, IAC obstruido | Limpieza de cuerpo de aceleración y reaprendizaje de ralentí |
 | 45 | **P0507** | Sistema de control de ralentí — RPM más altas de lo esperado | Fuga de vacío, válvula PCV defectuosa, IAC pegado abierto | Inspeccionar mangueras de vacío y PCV |
 | 46 | **P0521** | Rango/desempeño del sensor de presión de aceite del motor | Sensor desviado, presión de aceite real fuera de rango | Verificar presión real con manómetro mecánico antes de reemplazar sensor |
-| 47 | **P0606** | Procesador del módulo de control (PCM) | Falla interna del PCM, alimentación inestable | Verificar tensión de batería y masas; reflasheo o reemplazo del PCM |
+| 47 | **P0606** | Procesador del módulo de control (ECM/PCM) | Falla interna del módulo, alimentación inestable | Verificar tensión de batería y masas; reflasheo o reemplazo del módulo |
 | 48 | **P0700** | Solicitud de iluminación de MIL desde el módulo TCM | Falla en transmisión — códigos secundarios en TCM | Leer DTC del TCM para identificar la causa raíz |
 | 49 | **P0741** | Desempeño del circuito del embrague del convertidor de torque | Solenoide TCC defectuoso, fluido ATF degradado, bomba de aceite | Cambio de ATF y filtro; pruebas de presión hidráulica |
 | 50 | **P2002** | Eficiencia del filtro de partículas diésel (DPF) — Banco 1 | DPF saturado, sensor de presión diferencial dañado, regeneraciones fallidas | Forzar regeneración; verificar sensor diferencial; en último caso, sustituir DPF |
 
 ## 6. Notas sobre variaciones por fabricante (OEM)
 
-> 📋 **NOTA TÉCNICA — VARIACIONES OEM CONOCIDAS**
+> ▪ **NOTA TÉCNICA — VARIACIONES OEM CONOCIDAS**
 >
 > - **Toyota / Lexus:** El P0420 frecuentemente se presenta sin pérdida
 >   real de eficiencia del catalizador en motores 1MZ-FE y 2GR-FE; se

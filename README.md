@@ -99,7 +99,7 @@ apriete y diagramas. **En preparación.**
 |---|---|---|
 | [`tools/comparativa-scanners.md`](tools/comparativa-scanners.md) | Comparativa técnica de escáneres OBD-II por nivel | 🚧 En preparación |
 
-> 📋 **Nota técnica**
+> ▪ **Nota técnica**
 > Los documentos marcados como *"En preparación"* serán publicados en
 > *Pull Requests* sucesivos. Cada documento incluye su propio número
 > de identificación INNV, índice navegable, marco normativo,
@@ -216,7 +216,12 @@ siguientes criterios verificables:
    explícitamente en una sección dedicada.
 3. **Advertencias de seguridad obligatorias.** Todo procedimiento
    eléctrico, sobre alta presión o sobre alta tensión incluye
-   advertencia explícita marcada con `⚠️`.
+   advertencia explícita marcada con uno de tres iconos según
+   gravedad:
+   - 🛑 — riesgo inmediato a la vida (alta tensión, dispositivos
+     pirotécnicos, gases letales, MIL parpadeante).
+   - ⚠️ — advertencia operativa general (precauciones de proceso).
+   - ▪ — nota técnica operativa (información complementaria).
 4. **Bibliografía completa.** Cada documento finaliza con sus
    referencias técnicas numeradas.
 5. **Revisión periódica.** Cada documento normativo INNV declara una

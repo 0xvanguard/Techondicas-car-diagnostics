@@ -46,8 +46,8 @@ plataformas modernas, **Automotive Ethernet**.
 >
 > 1. Identifique el **módulo "fuente"** (el que sale primero del bus
 >    o el más cercano al fallo eléctrico).
-> 2. Recuerde que un código `U0100` *en el TCM* no significa que la
->    ECM esté dañada: significa que el TCM dejó de "oír" a la ECM.
+> 2. Recuerde que un código `U0100` *en el TCM* no significa que el
+>    ECM esté dañado: significa que el TCM dejó de "oír" al ECM.
 > 3. Diagnostique siempre **del bus físico hacia los módulos**, nunca
 >    al revés.
 
@@ -111,11 +111,11 @@ U 0 1 0 0
 | 9 | **U0028** | 🅢 | Bus de comunicación del vehículo "A" | Bus designado "A" en topología multi-bus | Identificar bus "A" en diagrama OEM |
 | 10 | **U0073** | 🅢 | Bus de comunicación A del módulo de control — apagado (*Bus Off*) | Módulo en estado *Bus Off* por exceso de errores TX | Identificar módulo fuente; revisar resistencias terminales |
 | 11 | **U0074** | 🅢 | Bus de comunicación B del módulo de control — apagado | Idem U0073 sobre bus secundario | Idem U0073 |
-| 12 | **U0100** | 🅢 | Pérdida de comunicación con ECM/PCM "A" | ECM sin alimentación, fusible, falla de la ECM, cable CAN al ECM | Verificar 12 V y masa del ECM; medir CAN en conector de la ECM |
+| 12 | **U0100** | 🅢 | Pérdida de comunicación con ECM/PCM "A" | ECM sin alimentación, fusible, falla del ECM, cable CAN al ECM | Verificar 12 V y masa del ECM; medir CAN en conector del ECM |
 | 13 | **U0101** | 🅢 | Pérdida de comunicación con TCM | TCM sin alimentación, conexión CAN | Verificar arnés del TCM; alimentación y masa |
 | 14 | **U0102** | 🅢 | Pérdida de comunicación con módulo de transferencia (4WD) | Transfer case control module | Verificar alimentación del módulo 4WD |
 | 15 | **U0103** | 🅢 | Pérdida de comunicación con módulo de cambio de marchas | Gear shift module (en transmisiones shift-by-wire) | Verificar conector del selector electrónico |
-| 16 | **U0104** | 🅢 | Pérdida de comunicación con módulo de control de crucero | Cruise control module | Si está integrado a la ECM, ver U0100 |
+| 16 | **U0104** | 🅢 | Pérdida de comunicación con módulo de control de crucero | Cruise control module | Si está integrado al ECM, ver U0100 |
 | 17 | **U0105** | 🅢 | Pérdida de comunicación con módulo del inyector | Driver de inyectores externo (algunos diésel) | Verificar arnés y alimentación del módulo |
 | 18 | **U0109** | 🅢 | Pérdida de comunicación con módulo de la bomba de combustible | Fuel pump driver module | Verificar arnés bajo el vehículo, masa del FPDM |
 | 19 | **U0121** | 🅢 | Pérdida de comunicación con módulo ABS | EBCM sin comunicación CAN | Ver `docs/codigos-C.md`; verificar alimentación del EBCM |
@@ -184,7 +184,7 @@ U 0 1 0 0
 
 ### Paso 1 — Inventario de DTC
 
-Lea **todos los módulos** del vehículo (no solo la ECM). Una sola
+Lea **todos los módulos** del vehículo (no solo el ECM). Una sola
 falla física en el bus puede aparecer reportada por 5–15 módulos
 simultáneamente.
 
@@ -237,7 +237,7 @@ falla. Verifique:
 
 Después de reparar:
 
-1. Borre todos los DTC de todos los módulos (no solo de la ECM).
+1. Borre todos los DTC de todos los módulos (no solo del ECM).
 2. Apague el vehículo y espere 5 minutos para que todos los módulos
    entren en modo *sleep*.
 3. Encienda y verifique en al menos un ciclo KOEO + KOER + 5 minutos

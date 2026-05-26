@@ -125,7 +125,7 @@ C 0 0 3 5
 | 34 | **C0277** | 🅢 | Circuito del switch de luces de freno | Switch defectuoso, ajuste | Reemplazar switch; calibrar |
 | 35 | **C0281** | 🅢 | Circuito del switch de freno (entrada al módulo) | Idem C0277 con cableado al módulo | Verificar continuidad al módulo |
 | 36 | **C0288** | 🅢 | Problema hidráulico del sistema de frenos | Aire en el sistema, fuga, bomba degradada | Sangrado del sistema; prueba de presión |
-| 37 | **C0292** | 🅢 | Falla de comunicación reportada por la ECM | ECM no responde al EBCM por CAN | Diagnóstico de red CAN |
+| 37 | **C0292** | 🅢 | Falla de comunicación  reportada por el ECM | ECM no responde al EBCM por CAN | Diagnóstico de red CAN |
 | 38 | **C0300** | 🅢 | Motor de tracción 4WD/AWD | Actuador 4WD, encoder | Verificar accionamiento del transfer case |
 | 39 | **C0327** | 🅢 | Circuito del motor del codificador (encoder 4WD) | Encoder del transfer case | Reemplazar encoder; recalibrar |
 | 40 | **C0455** | 🅢 | Sensor de altura del vehículo (suspensión activa) | Sensor de altura desacoplado o roto | Inspeccionar varillaje del sensor; recalibrar altura |

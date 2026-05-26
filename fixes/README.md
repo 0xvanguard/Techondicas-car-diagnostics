@@ -74,7 +74,7 @@ publicaciones siguientes (no exhaustivo):
 - `P0401.md` — EGR flujo insuficiente.
 - `P0442.md` — Fuga pequeña EVAP.
 - `P0455.md` — Fuga grande EVAP.
-- `P0606.md` — Procesador del PCM.
+- `P0606.md` — Procesador del ECM.
 - `P0700.md` — Solicitud de MIL desde TCM.
 - `B0102.md` — Squib loop abierto.
 - `C0040.md` — Sensor velocidad delantera derecha.
@@ -82,7 +82,7 @@ publicaciones siguientes (no exhaustivo):
 - `U0073.md` — Bus de control en estado *Bus Off*.
 - `U0140.md` — Pérdida de comunicación con BCM.
 
-> 📋 **Cómo proponer un nuevo procedimiento**
+> ▪ **Cómo proponer un nuevo procedimiento**
 > Abra un *issue* en el repositorio indicando el DTC y aportando
 > una experiencia documentada. Los procedimientos del manual se
 > validan con bibliografía técnica (SAE/ISO/Bosch/OEM TSB) antes de
@@ -92,8 +92,9 @@ publicaciones siguientes (no exhaustivo):
 
 - 🅢 = código genérico SAE J2012.
 - 🅞 = código específico OEM (B1xxx, B2xxx, C1xxx, C2xxx, U1xxx, U2xxx, P1xxx, P3xxx).
-- ⚠️ = advertencia de seguridad o riesgo.
-- 📋 = nota técnica.
+- 🛑 = riesgo inmediato a la vida (alta tensión, dispositivos pirotécnicos, gases letales, MIL parpadeante).
+- ⚠️ = advertencia operativa general.
+- ▪ = nota técnica operativa.
 
 ## Limitaciones del manual
 

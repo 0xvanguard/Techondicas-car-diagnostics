@@ -38,7 +38,7 @@ al estándar **SAE J2012**.
   fabricante**.
 - La columna *"Solución básica"* es **orientativa**.
 
-> ⚠️ **ADVERTENCIA CRÍTICA — SISTEMA DE FRENADO**
+> 🛑 **ADVERTENCIA CRÍTICA — SISTEMA DE FRENADO**
 > Una falla en cualquiera de los subsistemas de chasis puede
 > comprometer la **distancia y estabilidad de frenado**. Mientras un
 > código DTC de la franja C esté activo:
@@ -76,7 +76,7 @@ C 0 0 3 5
 | C0800–C0899 | Alimentación y masas del módulo |
 | C0900–C0999 | Comunicación interna del módulo de frenos |
 
-> 📋 **NOTA TÉCNICA:** El módulo electrónico de control del freno
+> ▪ **NOTA TÉCNICA:** El módulo electrónico de control del freno
 > (EBCM/ABS Module) requiere alimentación principal robusta. Caídas
 > de tensión por debajo de 9 V durante el arranque pueden generar
 > falsos positivos en C0800/C0900. Verifique la batería antes de
@@ -125,7 +125,7 @@ C 0 0 3 5
 | 34 | **C0277** | 🅢 | Circuito del switch de luces de freno | Switch defectuoso, ajuste | Reemplazar switch; calibrar |
 | 35 | **C0281** | 🅢 | Circuito del switch de freno (entrada al módulo) | Idem C0277 con cableado al módulo | Verificar continuidad al módulo |
 | 36 | **C0288** | 🅢 | Problema hidráulico del sistema de frenos | Aire en el sistema, fuga, bomba degradada | Sangrado del sistema; prueba de presión |
-| 37 | **C0292** | 🅢 | Falla de comunicación reportada por el PCM | PCM no responde al EBCM por CAN | Diagnóstico de red CAN |
+| 37 | **C0292** | 🅢 | Falla de comunicación reportada por la ECM | ECM no responde al EBCM por CAN | Diagnóstico de red CAN |
 | 38 | **C0300** | 🅢 | Motor de tracción 4WD/AWD | Actuador 4WD, encoder | Verificar accionamiento del transfer case |
 | 39 | **C0327** | 🅢 | Circuito del motor del codificador (encoder 4WD) | Encoder del transfer case | Reemplazar encoder; recalibrar |
 | 40 | **C0455** | 🅢 | Sensor de altura del vehículo (suspensión activa) | Sensor de altura desacoplado o roto | Inspeccionar varillaje del sensor; recalibrar altura |
@@ -142,7 +142,7 @@ C 0 0 3 5
 
 ## 6. Variaciones por fabricante (OEM)
 
-> 📋 **NOTA TÉCNICA — INTERPRETACIÓN OEM**
+> ▪ **NOTA TÉCNICA — INTERPRETACIÓN OEM**
 >
 > El rango **C1xxx/C2xxx** está reservado a definiciones específicas
 > del fabricante. Ejemplos relevantes:

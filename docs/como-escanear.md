@@ -108,22 +108,23 @@ Este procedimiento **no cubre**:
 > tensión en el bus CAN y dañar tanto la herramienta como módulos del
 > vehículo.
 
-> ⚠️ **ADVERTENCIA — VEHÍCULOS HÍBRIDOS Y ELÉCTRICOS**
+> 🛑 **ADVERTENCIA CRÍTICA — VEHÍCULOS HÍBRIDOS Y ELÉCTRICOS**
 > No manipule cableado naranja (alta tensión, hasta 650 V CC) sin
 > certificación específica HV. El procedimiento aquí descrito se limita a
-> la red de baja tensión (12 V) y al diagnóstico OBD-II.
+> la red de baja tensión (12 V) y al diagnóstico OBD-II. **Riesgo de
+> lesión grave o muerte por contacto eléctrico.**
 
-> ⚠️ **ADVERTENCIA — GASES DE ESCAPE**
+> 🛑 **ADVERTENCIA CRÍTICA — GASES DE ESCAPE**
 > Si el procedimiento requiere motor encendido, opere el vehículo en un
 > área ventilada o conecte un extractor de gases. La inhalación de monóxido
-> de carbono (CO) es letal.
+> de carbono (CO) es **letal**.
 
 > ⚠️ **ADVERTENCIA — BORRADO DE DTC**
 > El borrado prematuro de códigos elimina el Freeze Frame y reinicia los
 > monitores de Readiness. No borre códigos antes de documentarlos ni antes
 > de una inspección técnica vehicular oficial.
 
-> 📋 **NOTA TÉCNICA**
+> ▪ **NOTA TÉCNICA**
 > Algunos vehículos (en particular europeos y asiáticos posteriores a
 > 2008) implementan **Security Access (ISO 14229)**. Funciones bidirec­
 > cionales y borrado de ciertos códigos pueden requerir semilla/clave
@@ -145,7 +146,7 @@ de PID.
 - Tensión en reposo ≥ 12.4 V.
 - Tensión con motor en marcha entre 13.8 V y 14.6 V.
 
-> 📋 **NOTA TÉCNICA:** Una batería con tensión inferior a 11.5 V puede
+> ▪ **NOTA TÉCNICA:** Una batería con tensión inferior a 11.5 V puede
 > provocar lecturas erráticas o impedir la inicialización de la ECU.
 
 **Paso 4.** Registre los datos básicos del vehículo:
@@ -229,7 +230,7 @@ mínimos durante al menos 60 segundos en ralentí:
 | 0x07 | Ajuste de combustible largo plazo | ±10 % |
 | 0x14–0x1B | Tensiones de sensores O₂ | 0.1–0.9 V oscilante |
 
-> 📋 **NOTA TÉCNICA:** Valores de LTFT superiores a +10 % indican mezcla
+> ▪ **NOTA TÉCNICA:** Valores de LTFT superiores a +10 % indican mezcla
 > pobre persistente; valores inferiores a −10 % indican mezcla rica
 > persistente. Use estos datos junto con los DTC para confirmar la
 > hipótesis de falla.

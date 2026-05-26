@@ -62,7 +62,7 @@ verificables**:
 | 9 | **Funciones bidireccionales** | Activación de actuadores (bomba ABS, válvulas EVAP, inyectores, EGR) |
 | 10 | **Conectividad y actualizaciones** | USB / Bluetooth / Wi-Fi; vigencia y costo de las actualizaciones |
 
-> 📋 **NOTA TÉCNICA — IDIOMA Y SOPORTE**
+> ▪ **NOTA TÉCNICA — IDIOMA Y SOPORTE**
 > Para uso en países hispanohablantes, INNV recomienda exigir
 > adicionalmente:
 >
@@ -132,7 +132,7 @@ distintos, INNV clasifica los escáneres en **cuatro niveles**:
 | 11 | **Bosch ADS 625 / KTS 560 / KTS 590** | 4 | Wi-Fi/Bluetooth | 2 500 – 5 000 | Grado taller industrial, integración con base de datos ESI[tronic], multimarca avanzado | Inversión elevada; requiere infraestructura de taller |
 | 12 | **Equipo OEM original** (Tech 2 / GDS2 — GM, IDS/FDRS — Ford, Techstream — Toyota, wiTECH — Stellantis, ISTA — BMW, XENTRY — Mercedes-Benz, CONSULT-III — Nissan) | 4 | USB / Wi-Fi (según marca) | 500 – 8 000+ | Cobertura completa de la marca, programación oficial, codificación, actualizaciones del fabricante | Cobertura limitada a una sola marca; licenciamiento OEM frecuentemente requerido |
 
-> 📋 **NOTA TÉCNICA — CLONES VS. ORIGINALES**
+> ▪ **NOTA TÉCNICA — CLONES VS. ORIGINALES**
 > Existen clones no autorizados de la mayoría de los equipos de
 > nivel 3 y 4. INNV **desaconseja** su uso por:
 >
@@ -218,7 +218,7 @@ como medio de inspección oficial exija a los escáneres:
 6. ✅ Imposibilidad técnica de **borrar DTC** durante una inspección
    oficial (modo de operación restringido).
 
-> 📋 **NOTA TÉCNICA — REPORTE INMUTABLE**
+> ▪ **NOTA TÉCNICA — REPORTE INMUTABLE**
 > Para evidencia técnica con valor legal, el reporte debe generarse
 > con marca temporal y, preferentemente, firma digital o hash que
 > permita verificar que no fue modificado posteriormente.
@@ -234,13 +234,14 @@ como medio de inspección oficial exija a los escáneres:
 > - Realizar borrados parciales que dejan códigos permanentes en
 >   estado inconsistente.
 > - Reflasheos fallidos que **inutilizan permanentemente** módulos
->   del vehículo (PCM, BCM, gateway).
+>   del vehículo (ECM, BCM, gateway).
 
-> ⚠️ **ADVERTENCIA — VEHÍCULOS HÍBRIDOS Y ELÉCTRICOS**
+> 🛑 **ADVERTENCIA CRÍTICA — VEHÍCULOS HÍBRIDOS Y ELÉCTRICOS**
 > Algunos sistemas de gestión de la batería de tracción (BMS) y de
 > la unidad de potencia (MGU/PCU) **no son accesibles** mediante
 > OBD-II genérico. Requieren equipo OEM o de nivel 4 con cobertura
-> específica.
+> específica. **No interactúe con módulos de alta tensión sin
+> certificación HV: riesgo de lesión grave o muerte.**
 
 > ⚠️ **ADVERTENCIA — CONEXIÓN PERMANENTE**
 > Los escáneres tipo "dongle" Bluetooth/Wi-Fi conectados de forma

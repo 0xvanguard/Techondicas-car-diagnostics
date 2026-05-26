@@ -39,10 +39,11 @@ confort y control eléctrico vehicular, conforme al estándar
 - La columna *"Solución básica"* es **orientativa**. Toda intervención
   sobre sistemas SRS debe seguir el manual del fabricante.
 
-> ⚠️ **ADVERTENCIA CRÍTICA — SISTEMAS DE SUJECIÓN SUPLEMENTARIA (SRS)**
+> 🛑 **ADVERTENCIA CRÍTICA — SISTEMAS DE SUJECIÓN SUPLEMENTARIA (SRS)**
 > Los códigos B0xxx referidos a airbags y pretensores involucran
 > dispositivos pirotécnicos energizados a tensiones de hasta 35 V por
-> el módulo SDM/SRS. Antes de cualquier intervención:
+> el módulo SDM/SRS. **El despliegue accidental puede causar lesiones
+> graves o la muerte.** Antes de cualquier intervención:
 >
 > 1. Desconecte la batería y **espere 10 minutos** mínimo (descarga
 >    del condensador de respaldo del SDM).
@@ -64,7 +65,7 @@ B 0 0 4 2
 └────────── B = Body (carrocería)
 ```
 
-> 📋 **NOTA TÉCNICA:** A diferencia de la franja P, donde los códigos
+> ▪ **NOTA TÉCNICA:** A diferencia de la franja P, donde los códigos
 > genéricos (P0xxx) cubren prácticamente todos los subsistemas
 > regulados por emisiones, en la franja B la mayor parte de los DTC
 > orientados a confort y carrocería (luces, cierre centralizado,
@@ -147,7 +148,7 @@ B 0 0 4 2
 
 ## 6. Variaciones por fabricante (OEM) en el rango B1xxx/B2xxx
 
-> 📋 **NOTA TÉCNICA — INTERPRETACIÓN OEM**
+> ▪ **NOTA TÉCNICA — INTERPRETACIÓN OEM**
 >
 > A diferencia de los rangos B0xxx/B3xxx, los códigos **B1xxx** y
 > **B2xxx** son específicos del fabricante. Una misma combinación

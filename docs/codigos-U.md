@@ -47,7 +47,7 @@ plataformas modernas, **Automotive Ethernet**.
 > 1. Identifique el **módulo "fuente"** (el que sale primero del bus
 >    o el más cercano al fallo eléctrico).
 > 2. Recuerde que un código `U0100` *en el TCM* no significa que el
->    PCM esté dañado: significa que el TCM dejó de "oír" al PCM.
+>    ECM esté dañado: significa que el TCM dejó de "oír" al ECM.
 > 3. Diagnostique siempre **del bus físico hacia los módulos**, nunca
 >    al revés.
 
@@ -73,7 +73,7 @@ U 0 1 0 0
 | FlexRay | 10 Mbit/s | Cableado dedicado | X-by-wire, suspensión activa premium |
 | Automotive Ethernet (100BASE-T1) | 100 Mbit/s a 1 Gbit/s | Par trenzado dedicado | ADAS, cámaras, infotainment moderno |
 
-> 📋 **NOTA TÉCNICA — RESISTENCIAS TERMINALES**
+> ▪ **NOTA TÉCNICA — RESISTENCIAS TERMINALES**
 > En un bus HS-CAN saludable, la medición de resistencia entre
 > CAN-H (pin 6) y CAN-L (pin 14) **con la batería desconectada** debe
 > arrojar aproximadamente **60 Ω** (paralelo de dos resistencias
@@ -111,11 +111,11 @@ U 0 1 0 0
 | 9 | **U0028** | 🅢 | Bus de comunicación del vehículo "A" | Bus designado "A" en topología multi-bus | Identificar bus "A" en diagrama OEM |
 | 10 | **U0073** | 🅢 | Bus de comunicación A del módulo de control — apagado (*Bus Off*) | Módulo en estado *Bus Off* por exceso de errores TX | Identificar módulo fuente; revisar resistencias terminales |
 | 11 | **U0074** | 🅢 | Bus de comunicación B del módulo de control — apagado | Idem U0073 sobre bus secundario | Idem U0073 |
-| 12 | **U0100** | 🅢 | Pérdida de comunicación con ECM/PCM "A" | PCM sin alimentación, fusible, falla del PCM, cable CAN al PCM | Verificar 12 V y masa del PCM; medir CAN en conector PCM |
+| 12 | **U0100** | 🅢 | Pérdida de comunicación con ECM/PCM "A" | ECM sin alimentación, fusible, falla del ECM, cable CAN al ECM | Verificar 12 V y masa del ECM; medir CAN en conector del ECM |
 | 13 | **U0101** | 🅢 | Pérdida de comunicación con TCM | TCM sin alimentación, conexión CAN | Verificar arnés del TCM; alimentación y masa |
 | 14 | **U0102** | 🅢 | Pérdida de comunicación con módulo de transferencia (4WD) | Transfer case control module | Verificar alimentación del módulo 4WD |
 | 15 | **U0103** | 🅢 | Pérdida de comunicación con módulo de cambio de marchas | Gear shift module (en transmisiones shift-by-wire) | Verificar conector del selector electrónico |
-| 16 | **U0104** | 🅢 | Pérdida de comunicación con módulo de control de crucero | Cruise control module | Si está integrado al PCM, ver U0100 |
+| 16 | **U0104** | 🅢 | Pérdida de comunicación con módulo de control de crucero | Cruise control module | Si está integrado al ECM, ver U0100 |
 | 17 | **U0105** | 🅢 | Pérdida de comunicación con módulo del inyector | Driver de inyectores externo (algunos diésel) | Verificar arnés y alimentación del módulo |
 | 18 | **U0109** | 🅢 | Pérdida de comunicación con módulo de la bomba de combustible | Fuel pump driver module | Verificar arnés bajo el vehículo, masa del FPDM |
 | 19 | **U0121** | 🅢 | Pérdida de comunicación con módulo ABS | EBCM sin comunicación CAN | Ver `docs/codigos-C.md`; verificar alimentación del EBCM |
@@ -142,7 +142,7 @@ U 0 1 0 0
 | 40 | **U0252** | 🅢 | Pérdida de comunicación con módulo de nivelación de faros | Headlamp leveling module | Verificar conector |
 | 41 | **U0300** | 🅢 | Incompatibilidad de software interno entre módulos | Versiones de firmware no coherentes tras reflasheo parcial | Reflasheo completo a versiones compatibles |
 | 42 | **U0301** | 🅢 | Incompatibilidad de software con ECM/PCM "A" | Idem U0300, pareja ECM/otro módulo | Reflasheo coherente |
-| 43 | **U0401** | 🅢 | Datos no válidos recibidos desde ECM/PCM "A" | PCM envía datos fuera de rango por sensor desviado | Diagnosticar primero códigos P |
+| 43 | **U0401** | 🅢 | Datos no válidos recibidos desde ECM/PCM "A" | El ECM envía datos fuera de rango por sensor desviado | Diagnosticar primero códigos P |
 | 44 | **U0402** | 🅢 | Datos no válidos recibidos desde TCM | TCM envía datos fuera de rango | Diagnosticar TCM (ver U0101 y P0700) |
 | 45 | **U0415** | 🅢 | Datos no válidos recibidos desde módulo de control de velocidad | Cruise control envía datos inconsistentes | Verificar sensores de pedal y velocidad |
 | 46 | **U0416** | 🅢 | Datos no válidos recibidos desde módulo de dinámica vehicular | ESC/yaw envía datos fuera de rango | Recalibrar yaw/SAS; ver `docs/codigos-C.md` |
@@ -153,7 +153,7 @@ U 0 1 0 0
 
 ## 7. Variaciones por fabricante (OEM)
 
-> 📋 **NOTA TÉCNICA — INTERPRETACIÓN OEM**
+> ▪ **NOTA TÉCNICA — INTERPRETACIÓN OEM**
 >
 > El rango **U1xxx/U2xxx** está reservado a definiciones específicas
 > del fabricante. Los códigos U-genéricos (U0xxx) están en general
@@ -184,7 +184,7 @@ U 0 1 0 0
 
 ### Paso 1 — Inventario de DTC
 
-Lea **todos los módulos** del vehículo (no solo el PCM). Una sola
+Lea **todos los módulos** del vehículo (no solo el ECM). Una sola
 falla física en el bus puede aparecer reportada por 5–15 módulos
 simultáneamente.
 
@@ -192,8 +192,8 @@ simultáneamente.
 
 Aplique la regla de inferencia inversa:
 
-- Si **todos** los módulos reportan U0100 (lost comm with PCM),
-  probablemente el **PCM** es el módulo afectado físicamente.
+- Si **todos** los módulos reportan U0100 (lost comm with ECM),
+  probablemente la **ECM** es el módulo afectado físicamente.
 - Si **solo un módulo** reporta U0xxx contra otro específico, el
   problema está en el cableado entre ambos o en el módulo
   reportante.
@@ -231,13 +231,13 @@ falla. Verifique:
 
 - Alimentación principal del gateway.
 - Estado de las resistencias terminales (típicamente integradas en
-  PCM y en uno de los módulos del extremo del bus).
+  ECM y en uno de los módulos del extremo del bus).
 
 ### Paso 6 — Validación post-reparación
 
 Después de reparar:
 
-1. Borre todos los DTC de todos los módulos (no solo del PCM).
+1. Borre todos los DTC de todos los módulos (no solo del ECM).
 2. Apague el vehículo y espere 5 minutos para que todos los módulos
    entren en modo *sleep*.
 3. Encienda y verifique en al menos un ciclo KOEO + KOER + 5 minutos

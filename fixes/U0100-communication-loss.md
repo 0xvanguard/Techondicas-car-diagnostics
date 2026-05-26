@@ -37,17 +37,17 @@
 
 ### Significado funcional
 
-El DTC `U0100` lo emite **un módulo distinto al PCM** cuando deja
-de recibir mensajes CAN del PCM dentro de un período esperado
+El DTC `U0100` lo emite **un módulo distinto al ECM** cuando deja
+de recibir mensajes CAN del ECM dentro de un período esperado
 (típicamente 100–500 ms). En una topología CAN típica, módulos como
-TCM, EBCM, BCM, IPC y SDM esperan mensajes periódicos del PCM con
+TCM, EBCM, BCM, IPC y SDM esperan mensajes periódicos del ECM con
 información crítica (velocidad, RPM, temperatura, posición del
 acelerador, estado del freno).
 
-> 📋 **NOTA TÉCNICA — INFERENCIA INVERSA**
+> ▪ **NOTA TÉCNICA — INFERENCIA INVERSA**
 >
 > Si **muchos módulos** reportan `U0100` simultáneamente, la causa
-> está en el **PCM o en el bus** que conecta al PCM, no en cada uno
+> está en el **ECM o en el bus** que conecta al ECM, no en cada uno
 > de los módulos reportantes.
 >
 > Si **un solo módulo** reporta `U0100`, la causa está en el
@@ -66,7 +66,7 @@ acelerador, estado del freno).
 
 > ⚠️ **ADVERTENCIA — RIESGO DE NO-ARRANQUE**
 > Algunas pruebas requieren desconectar módulos. Tras desconectar
-> el PCM o el gateway, el vehículo **puede no arrancar**. Asegúrese
+> el ECM o el gateway, el vehículo **puede no arrancar**. Asegúrese
 > de:
 >
 > - Tener el vehículo en lugar accesible.
@@ -77,7 +77,7 @@ acelerador, estado del freno).
 ## 3. Equipo y herramientas requeridas
 
 - Escáner OBD-II nivel 3 mínimo (con capacidad de leer **todos los
-  módulos**, no solo el PCM).
+  módulos**, no solo el ECM).
 - Multímetro digital con resolución de 0.1 Ω.
 - **Osciloscopio automotriz** de 2 canales (recomendado para
   capturar señal CAN-H y CAN-L simultáneamente).
@@ -92,14 +92,14 @@ acelerador, estado del freno).
 
 | # | Causa | Frecuencia | Costo |
 |---|---|---|---|
-| 1 | Fusible del PCM quemado | 25 % | Muy bajo |
-| 2 | Conector del PCM flojo, oxidado o dañado | 18 % | Bajo |
-| 3 | Falla de masa principal del PCM (cable de masa al chasis) | 15 % | Bajo |
-| 4 | Cableado CAN-H o CAN-L cortado entre PCM y bus | 12 % | Medio |
+| 1 | Fusible del ECM quemado | 25 % | Muy bajo |
+| 2 | Conector del ECM flojo, oxidado o dañado | 18 % | Bajo |
+| 3 | Falla de masa principal del ECM (cable de masa al chasis) | 15 % | Bajo |
+| 4 | Cableado CAN-H o CAN-L cortado entre ECM y bus | 12 % | Medio |
 | 5 | Cortocircuito del CAN-H o CAN-L a 12 V o masa | 10 % | Medio |
-| 6 | Falla del relé principal del PCM | 8 % | Bajo |
-| 7 | Resistencia terminal del PCM dañada (interna) | 5 % | Alto |
-| 8 | Falla interna del PCM | 4 % | Muy alto |
+| 6 | Falla del relé principal del ECM | 8 % | Bajo |
+| 7 | Resistencia terminal del ECM dañada (interna) | 5 % | Alto |
+| 8 | Falla interna del ECM | 4 % | Muy alto |
 | 9 | Falla del módulo gateway (en topologías multi-bus) | 2 % | Alto |
 | 10 | Sobretensión por salto de batería incorrecto previo | 1 % | Variable |
 
@@ -108,12 +108,12 @@ acelerador, estado del freno).
 ### Paso 1 — Inventario completo de DTC
 
 1. Conecte el escáner.
-2. Lea **TODOS** los módulos del vehículo, no solo el PCM. Anote
+2. Lea **TODOS** los módulos del vehículo, no solo el ECM. Anote
    en tabla:
 
 | Módulo | DTC reportados | ¿Reporta U0100? |
 |---|---|---|
-| PCM | | — |
+| ECM | | — |
 | TCM | | |
 | EBCM (ABS) | | |
 | SDM (SRS) | | |
@@ -122,30 +122,30 @@ acelerador, estado del freno).
 | HVAC | | |
 | Otros | | |
 
-3. Si **el escáner no comunica con el PCM**, ese es el síntoma
-   primario. Si comunica con el PCM pero otros módulos reportan
-   `U0100`, el problema es entre el PCM y el bus, no en el PCM
+3. Si **el escáner no comunica con el ECM**, ese es el síntoma
+   primario. Si comunica con el ECM pero otros módulos reportan
+   `U0100`, el problema es entre el ECM y el bus, no en el ECM
    completo.
 
-### Paso 2 — Verificación de alimentación y masa del PCM
+### Paso 2 — Verificación de alimentación y masa del ECM
 
-> 📋 **NOTA TÉCNICA**
+> ▪ **NOTA TÉCNICA**
 > Esta es la causa más común y más fácil de descartar. Hacerla
 > SIEMPRE primero.
 
-1. Localice los fusibles del PCM (módulo principal y relé). Suelen
+1. Localice los fusibles del ECM (módulo principal y relé). Suelen
    ser **2 a 4 fusibles** distintos:
    - Fusible de **memoria** (siempre +12 V).
    - Fusible de **encendido** (+12 V con llave en RUN).
    - Fusible de **inyectores/bobinas** alimentado por el relé del
-     PCM.
+     ECM.
 2. Verifique con multímetro o probador:
    - Tensión en cada fusible con KOEO y KOER.
    - Que ningún fusible esté quemado.
-3. Verifique las **masas del PCM**:
+3. Verifique las **masas del ECM**:
    - Localice los pernos de masa según diagrama OEM.
    - Mida con multímetro la **caída de tensión** entre el pin de
-     masa del conector del PCM y el negativo de la batería.
+     masa del conector del ECM y el negativo de la batería.
    - Caída esperada: **< 0.1 V**. Caídas mayores indican masa
      pobre.
 
@@ -217,23 +217,23 @@ Si el bus está físicamente correcto pero hay códigos `U0100`:
 4. El módulo cuya desconexión "limpia" el bus es el **módulo
    ruidoso**.
 
-> 📋 **NOTA TÉCNICA — REGLA DE INFERENCIA INVERSA**
+> ▪ **NOTA TÉCNICA — REGLA DE INFERENCIA INVERSA**
 >
 > Si todos los módulos reportan `U0100`, mantenga conectado solo
-> el PCM y desconecte los demás. Si el bus comunica entonces, vaya
+> el ECM y desconecte los demás. Si el bus comunica entonces, vaya
 > reconectando uno a uno hasta encontrar el módulo conflictivo.
 
-### Paso 7 — Verificación del PCM mismo
+### Paso 7 — Verificación del ECM mismo
 
-Si el problema persiste y todos los signos apuntan al PCM:
+Si el problema persiste y todos los signos apuntan al ECM:
 
-1. Inspeccione físicamente el conector del PCM (ubicado típicamente
+1. Inspeccione físicamente el conector del ECM (ubicado típicamente
    en el compartimento del motor o detrás del tablero).
 2. Verifique cada pin sin doblarlos: oxidación, retracción de pin,
    sello del conector.
 3. Limpie con limpiador de contactos electrónicos.
-4. Antes de reemplazar el PCM, **considere causas externas**:
-   - Entrada de agua al compartimento donde está el PCM.
+4. Antes de reemplazar el ECM, **considere causas externas**:
+   - Entrada de agua al compartimento donde está el ECM.
    - Daño por sobretensión por salto de batería con polaridad
      invertida o de vehículo de mayor tensión.
 
@@ -249,7 +249,7 @@ Si el problema persiste y todos los signos apuntan al PCM:
 
 ### Caso B — Reparación de masa pobre
 
-1. Localice el perno de masa del PCM según diagrama OEM.
+1. Localice el perno de masa del ECM según diagrama OEM.
 2. Retire el perno.
 3. Lije la zona de contacto eliminando óxido y pintura.
 4. Aplique grasa anticorrosiva en el contacto.
@@ -266,10 +266,10 @@ Si el problema persiste y todos los signos apuntan al PCM:
    - Preserve la longitud lo más cercana posible a la original.
 3. Verifique resistencia y tensiones tras la reparación.
 
-### Caso D — Reemplazo del PCM
+### Caso D — Reemplazo del ECM
 
 > ⚠️ **PROCEDIMIENTO MAYOR**
-> El PCM es uno de los módulos más caros del vehículo y el
+> El ECM es uno de los módulos más caros del vehículo y el
 > reemplazo requiere:
 >
 > - **Programación con el VIN** del vehículo.
@@ -309,7 +309,7 @@ Si el problema persiste y todos los signos apuntan al PCM:
 
 > ⚠️ **ESCALAR A TALLER ESPECIALIZADO SI:**
 >
-> - El PCM o gateway requiere reemplazo: **siempre** requiere
+> - El ECM o gateway requiere reemplazo: **siempre** requiere
 >   programación OEM.
 > - El bus CAN tiene cortocircuito difícil de localizar: requiere
 >   osciloscopio multicanal o herramientas tipo CANalyzer.
